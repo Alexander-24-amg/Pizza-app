@@ -1,0 +1,8 @@
+[
+    {"uid":"b285922e-b0c3-4847-8221-a19493f07ddf", "title":"Белорусская", "price":3, "price25":1, "price35":5},
+
+    {"uid":"608c38a2-2ff4-4ff1-a3c3-04ab7e05fa77", "title":"Сырная", "price":3, "price25":1, "price35":5},
+
+    {"uid":"d0af7aa5-407b-4ab9-98fe-f1f7599c1fdc", "title":"Карбанара", "price":4, "price25":2, "price35":6}
+
+]
