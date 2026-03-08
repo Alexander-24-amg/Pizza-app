@@ -1,4 +1,8 @@
-export function BasketItem({uid,title,price,qty,items,setItems,size}){
+import './BasketItem.css'
+import {BasketSum} from './BasketSum'
+
+
+export function BasketItem({uid,title,price,qty,items,setItems,size,pizzaLittle,sum}){
     
     const Subtract= ()=>{
         const newItems=[...items]
@@ -21,19 +25,32 @@ export function BasketItem({uid,title,price,qty,items,setItems,size}){
         setItems(newItems)
     }
     return(
-        <div className="">
-            <div className="">{title}</div>
-            <div className="">{price}$</div>
-            <div className="">{size}см</div>
-            <div className="">
-                <button onClick={Subtract}>-</button>
-                {qty}
-                <button onClick={Addition}>+</button>
+        <div className="BasketItem">
+                <div className='BasketItem_product'>
+                    <div className='BasketItem_foto'>
+                        <img src={pizzaLittle} alt=""style={{width:'150px',height:'150px'}}/>
+                    </div>
+
+                    <div className='BasketItem_text'>
+                        <p className='BasketItem_text__title'>{title}</p>
+                        <p className='BasketItem_text__size'>{size}см</p>
+                    </div>
                 </div>
-            {/* <div className="">{price*qty}</div> */}
-            <div className="">
-                <a href="#" onClick={removePosition}>Отменить</a>
-            </div>
+                
+                <div className="BasketItem_Flex">
+                    <p className="BasketItem_Price">Цена {price}$</p>
+                    
+                    <div className="BasketItem_Qty">
+                        <button onClick={Subtract}>-</button>
+                        <span>{qty}</span>
+                        <button onClick={Addition}>+</button>
+                    </div>
+                    
+                    {/* <div className="">{price*qty}</div> */}
+                    <div className="BasketItem_Remove">
+                        <a href="#" onClick={removePosition}>Убрать</a>
+                    </div>
+                </div>
         </div>
     )
 }

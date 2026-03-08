@@ -6,7 +6,7 @@ import {basketContext} from '../App.jsx'
 
 
 
-export function Info ({title,price,price25,price35,onClose,uid}){
+export function Info ({title,price,price25,price35,onClose,uid,pizzaBig,pizzaText,pizzaLittle}){
     const {items,setItems} = useContext(basketContext)
     const[butsize,setButSize]=useState(30)
     const[butprice,setButPrice]=useState(price)
@@ -33,7 +33,7 @@ export function Info ({title,price,price25,price35,onClose,uid}){
             item.uid == uid  && item.size === butsize
         ))
         if(indexItem == -1){
-        const newItems = [...items ,{uid,price:butprice,size:butsize,title,qty:1}]
+        const newItems = [...items ,{uid,price:butprice,size:butsize,title,qty:1,pizzaLittle}]
         setItems(newItems) 
 
         // if (typeof onClose === 'function') {}
@@ -53,16 +53,26 @@ export function Info ({title,price,price25,price35,onClose,uid}){
     }
     return (
             <div className='info' onClick={(ev) => ev.stopPropagation()}> 
-                <button onClick={onClose}>X</button>
+                <div className='info_content'>
 
-                <h3>{title}</h3>
-                <p>Пикантная бла бла блааа</p>
-                <ul>
-                    <li><button onClick={()=>SizeClick(25)}>25см</button></li>
-                    <li><button onClick={()=>SizeClick(30)}>30см</button></li>
-                    <li><button onClick={()=>SizeClick(35)}>35см</button></li>
-                </ul>
-                <button onClick={AddToBasket} >Добавить +{butprice}$</button>
+                    <button className='info_content__button' onClick={onClose}>X</button>
+
+                    <div className='info_content_Fleximg'>
+                        <img src={pizzaBig} alt="" />
+                    </div>
+
+                    <h3>{title}</h3>
+                    <p>{pizzaText}</p>
+                    
+                    <div className='info_buttons'>
+                        <ul className='info_buttons__ul'>
+                            <li><button onClick={()=>SizeClick(25)} style={{backgroundColor: butsize === 25 ? '#ffddbb' : '#fff'}}>25см</button></li>
+                            <li><button onClick={()=>SizeClick(30)} style={{backgroundColor: butsize === 30 ? '#ffddbb' : '#fff'}}>30см</button></li>
+                            <li><button onClick={()=>SizeClick(35)} style={{backgroundColor: butsize === 35 ? '#ffddbb' : '#fff'}}>35см</button></li>
+                        </ul>
+                        <button className='info_buttons__ButAdd' onClick={AddToBasket} >В корзину + {butprice}$</button>
+                    </div>
+                </div>
             </div>
         
     

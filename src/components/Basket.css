@@ -1,0 +1,39 @@
+
+
+.Basket_nav{
+    display: flex;
+    justify-content: space-between;
+    padding:15px 300px 15px 300px;
+    background-color: rgb(255, 127, 29);
+    position:fixed;
+    width:100%;
+    z-index:2;
+    border-bottom: #7d7d7d 1px solid;
+}
+
+.Basket_nav__button{
+    width:150px;
+    height:50px;
+    background-color:#ffddbb;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    transition:0.5s;
+}
+
+.Basket_nav__button:hover{
+    background-color:#ffffff;
+    cursor: pointer;
+}
+
+.Basket_Flex{
+    display: flex;
+    gap:100px;
+    position: relative;
+    padding:100px 0px 50px 400px;
+}
+
+.Basket_BasketItem{
+    display: flex;
+    flex-direction: column;
+}

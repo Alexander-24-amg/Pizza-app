@@ -57,6 +57,7 @@ export function App() {
 
   return (
     <>
+    <div>
     <basketContext.Provider value={{items,setItems}}>
       {currentPage == 'Меню' && <div className='Component'>
       <Catalog  catalogitems={catalogitems}  linkBasketCatalog={linkBasketCatalog}/>
@@ -65,7 +66,7 @@ export function App() {
       {currentPage == 'Корзина' && <div className='Component'>
       <Basket items={items} setItems={setItems} linkBasketCatalog={linkBasketCatalog} />
       </div>}
-    
+    </div>
     </>
   )
 }

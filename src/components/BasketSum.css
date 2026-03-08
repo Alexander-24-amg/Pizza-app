@@ -1,0 +1,25 @@
+.BasketSum{
+    width:450px;
+    height:200px;
+    background-color:#ffddbb;
+    /* background-color: rgb(236, 236, 236); */
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+    position: fixed;
+}
+
+.BasketSum__openModal{
+    width:300px;
+    height:60px;
+    border-radius:15px;
+    border: none;
+    font-size:20px;
+    font-weight: 700;
+    margin-left:53px;
+    background-color: rgb(62, 146, 62);
+}
+.BasketSum h4{
+    font-size:25px;
+    padding-top:77px;
+}

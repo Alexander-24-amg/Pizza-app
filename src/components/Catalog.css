@@ -1,14 +1,40 @@
-div{background-color: rgb(181, 151, 3);}
-.Grid-Menu{
+
+
+.Catalog{
+    /* background-color: chocolate; */
+    font-family: 'Roboto Flex';
+}
+
+.Catalog_nav{
+    display: flex;
+    justify-content:space-between;
+    padding:15px 300px 15px 300px;
+    background: rgb(255, 127, 29);
+    position: fixed;
+    width:100%;
+    z-index:2;
+    border-bottom: #7d7d7d 1px solid;
+}
+.Catalog_nav button{
+    width:150px;
+    height:50px;
+    background-color:#ffddbb;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    transition:0.5s;
+}
+.Catalog_nav button:hover{
+    background-color:#ffffff;
+    cursor: pointer;
+}
+.Catalog_GridMenu{
     display: grid;
-    grid-template-columns: repeat(3,250px);
-    column-gap:15px;
+    grid-template-columns: repeat(3,400px);
+    column-gap:45px;
+    row-gap:55px;
     justify-content: center;
+    padding-top:200px;
+    padding-bottom:100px;
 }
-.Grid-Menu_Cell{
-    width: 250px;
-    height: 350px;
-    border: 3px solid #000;
-    border-radius:15px;
-    background: #e5e5e55b;
-}
+

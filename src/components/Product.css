@@ -1,6 +1,37 @@
-.Grid-Menu_Cell{width: 250px;
-    height: 350px;
-    border: 3px solid #000;
-    border-radius:15px;
-    background: #e5e5e55b;
+.Product_Cell{
+    width: 400px;
+    height: 450px;
+    border:none;
+    border-radius:25px;
+    background: #ffddbb;
+    padding:10px;
+}
+
+.Product_Cell:hover{
+    background: #ffebd8;
+    cursor: pointer;
+}
+
+.Product_picture{
+    width:100%;
+    min-height:60%;
+    display: flex;
+    justify-content: center;
+}
+
+.Product_picture img{
+    width: 300px;
+    height:300px;
+}
+
+.Product_text h3{
+    font-size:30px; 
+    color: rgb(0, 0, 0);
+    padding-left:30px;
+}
+.Product_text p{
+    position: relative;
+    left:30px;
+    top:50px;
+    font-size:20px;
 }
