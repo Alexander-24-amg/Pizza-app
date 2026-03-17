@@ -1,13 +1,22 @@
 import './Basket.css'
 import {BasketItem} from './BasketItem'
 import {BasketSum} from './BasketSum'
-
-
+import { useState } from 'react';
+import { AlertModal } from './AlertModal.jsx';
 
 
 
 export function Basket({items,setItems,linkBasketCatalog}){
     let sum=0;
+
+    const [modal,setModal]=useState(false)
+    const openModal =()=>{
+        setModal(true)
+    };
+    const closeModal =()=>{
+        setModal(false)
+    };
+
     return(
         <div className='Basket'>
             <div className='Basket_nav'>
@@ -24,9 +33,10 @@ export function Basket({items,setItems,linkBasketCatalog}){
                 }
                 </div>
                 <div>
-                    <BasketSum sum={sum} items={items} setItems={setItems}/>
+                    <BasketSum sum={sum} items={items} setItems={setItems} openModal={openModal}/>
                 </div>
             </div>
+            {modal && <AlertModal closeModal={closeModal}/>}
         </div>
     )
 }

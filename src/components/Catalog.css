@@ -15,6 +15,12 @@
     z-index:2;
     border-bottom: #7d7d7d 1px solid;
 }
+
+.Catalog_nav h2{
+    text-align: center;
+    width:86px;
+}
+
 .Catalog_nav button{
     width:150px;
     height:50px;
@@ -24,10 +30,12 @@
     font-size: 20px;
     transition:0.5s;
 }
+
 .Catalog_nav button:hover{
     background-color:#ffffff;
     cursor: pointer;
 }
+
 .Catalog_GridMenu{
     display: grid;
     grid-template-columns: repeat(3,400px);

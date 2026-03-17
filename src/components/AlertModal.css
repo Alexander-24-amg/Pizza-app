@@ -5,6 +5,7 @@
     background-color: rgba(21, 21, 21, 0.603);
     width:100%;
     height: 100%;
+    z-index: 2;
 }
 
 .AlertModal_modal{
@@ -15,7 +16,7 @@
     position:absolute;
     left: 680px;
     top: 200px;
-    
+    animation: ModalAnimation 400ms;
 }
 
 .AlertModal_modal h4{
@@ -35,4 +36,9 @@
     border-radius:30px;
     border: none;
     background-color: rgb(255, 172, 113);
+}
+
+@keyframes ModalAnimation {
+    0%{transform: translateY(-400px);}
+    100%{transform: translateY(0px);}
 }

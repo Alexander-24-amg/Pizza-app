@@ -25,32 +25,30 @@ export function App() {
 
 
 
-  const[loading,setLoading]=useState(true);
-  const[error,setError]=useState(null);
-  //для хранения товаров
-  const[catalogitems,setCatalogItems]=useState([]);
+  const[loading,setLoading]=useState(true); //Загрузка
+  const[error,setError]=useState(null);  //Ошибка
+  const[catalogitems,setCatalogItems]=useState([]);//для хранения товаров
+
   useEffect(()=>{
     async function fetchData(){
-        try{
-          const response = await fetch('catalogitems.json'); //Путь к JSON списку товаров
-          if(!response.ok){
-            throw new Error('Ошибка загрузки данных');
-          }
-          const data = await response.json();
-          setCatalogItems(data);
-        } catch (err) {
-          setError(err.messege);
-        } finally {
-          setLoading(false);
+      try{
+        const response = await fetch('catalogitems.json'); //Путь к JSON списку товаров
+        if(!response.ok){
+          throw new Error('Ошибка загрузки данных');
         }
-          }
-          fetchData();
+        const data = await response.json();
+        setCatalogItems(data);
+      } catch (err) {
+        setError(err.messege);
+      } finally {
+        setLoading(false);
+      }
+        }
+        fetchData();
   },[])
 
   if (loading) {return <div>Загрузка....</div>}
   if (error) {return <div>Ошибка: {error}</div>}
-
-
 
 
 
@@ -60,7 +58,7 @@ export function App() {
     <div>
     <basketContext.Provider value={{items,setItems}}>
       {currentPage == 'Меню' && <div className='Component'>
-      <Catalog  catalogitems={catalogitems}  linkBasketCatalog={linkBasketCatalog}/>
+      <Catalog  catalogitems={catalogitems}  linkBasketCatalog={linkBasketCatalog} items={items}/>
       </div>}
     </basketContext.Provider>
       {currentPage == 'Корзина' && <div className='Component'>

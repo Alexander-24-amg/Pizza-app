@@ -9,17 +9,17 @@ import {AlertModal} from './AlertModal'
 
 
 
-export function BasketSum({sum,items,setItems}){
-    const [modal,setModal]=useState(false)
-    const openModal =()=>{
-        setModal(true)
-    };
-    const closeModal =()=>{
-        setModal(false)
-    };
+export function BasketSum({sum,items,openModal}){
+    // const [modal,setModal]=useState(false)
+    // const openModal =()=>{
+    //     setModal(true)
+    // };
+    // const closeModal =()=>{
+    //     setModal(false)
+    // };
     return(
         <div className='BasketSum'>
-            {modal && <AlertModal closeModal={closeModal}/>}
+            {/* {modal && <AlertModal closeModal={closeModal}/>} */}
             
             {items.length > 0 && <button className='BasketSum__openModal' onClick={openModal}>Оформить заказ</button>}
 
