@@ -1,27 +1,31 @@
 import './BasketItem.css'
-import {BasketSum} from './BasketSum'
 
 
-export function BasketItem({uid,title,price,qty,items,setItems,size,pizzaLittle,sum}){
+
+export function BasketItem({uid,title,price,qty,items,setItems,size,pizzaLittle}){
+
+    
+
     
     const Subtract= ()=>{
         const newItems=[...items]
-        if(newItems.filter(item=>item.uid === uid)[0].qty > 1){
-        newItems.filter(item=>item.uid === uid)[0].qty--
+        if(newItems.filter(item=>item.uid === uid && item.size === size)[0].qty > 1){
+        newItems.filter(item=>item.uid === uid && item.size === size)[0].qty--
         }
         setItems(newItems)
     }
 
     const Addition= ()=>{
         const newItems=[...items]
-        newItems.filter(item=>item.uid === uid)[0].qty++
+        newItems.filter(item=>item.uid === uid && item.size === size)[0].qty++
         setItems(newItems)
     }
     
-    const removePosition =(ev)=>{
+    const removePosition =(ev,key)=>{
         ev.preventDefault()
-        // const newItems=[...items].filter(item=>item.uid != uid )
-        const newItems=[...items].filter(item=>!(item.uid === uid && item.size === size) )
+        const {uid, size} = key
+        // const newItems=[...items].filter(item=>item.uid != uid && item.size != size)
+        const newItems=items.filter(item=>!(item.uid === uid && item.size === size) )
         setItems(newItems)
     }
     return(
@@ -48,7 +52,7 @@ export function BasketItem({uid,title,price,qty,items,setItems,size,pizzaLittle,
                     
                     {/* <div className="">{price*qty}</div> */}
                     <div className="BasketItem_Remove">
-                        <a href="#" onClick={removePosition}>Убрать</a>
+                        <button onClick={(e)=>removePosition(e, {uid, size})}>Убрать</button>
                     </div>
                 </div>
         </div>

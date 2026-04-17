@@ -29,14 +29,14 @@ export function Basket({items,setItems,linkBasketCatalog}){
                 {
                     items.map(({title,price,qty,uid,size,pizzaLittle})=>{ 
                         sum+= qty*price 
-                        return <BasketItem title={title} price={price} qty={qty} uid={uid} key={uid} items={items} setItems={setItems} size=    {size} pizzaLittle={pizzaLittle} sum={sum}/>})
+                        return <BasketItem title={title} price={price} qty={qty} uid={uid} key={uid} items={items} setItems={setItems} size={size} pizzaLittle={pizzaLittle} sum={sum}/>})
                 }
                 </div>
                 <div>
                     <BasketSum sum={sum} items={items} setItems={setItems} openModal={openModal}/>
                 </div>
             </div>
-            {modal && <AlertModal closeModal={closeModal}/>}
+            {modal && <AlertModal closeModal={closeModal}  sum={sum}/>}
         </div>
     )
 }

@@ -6,11 +6,11 @@ import {basketContext} from '../App.jsx'
 
 
 
-export function Info ({title,price,price25,price35,onClose,uid,pizzaBig,pizzaText,pizzaLittle}){
+export function Info ({title,price,price25,price35,onClose,uid,pizzaBig,pizzaText,pizzaLittle,startAnimation,finishAnimation}){
     const {items,setItems} = useContext(basketContext)
     const[butsize,setButSize]=useState(30)
     const[butprice,setButPrice]=useState(price)
-
+    
     const SizeClick = (size) => {
         setButSize(size);
         switch(size) {
@@ -30,26 +30,26 @@ export function Info ({title,price,price25,price35,onClose,uid,pizzaBig,pizzaTex
 
     const AddToBasket = ()=>{
         const indexItem = items.findIndex(item=>(
-            item.uid == uid  && item.size === butsize
+            item.uid === uid  && item.size === butsize
         ))
+        
         if(indexItem == -1){
         const newItems = [...items ,{uid,price:butprice,size:butsize,title,qty:1,pizzaLittle}]
         setItems(newItems) 
-
-        // if (typeof onClose === 'function') {}
-        onClose();
-        
-        
-        } else {
-        const newItems = [...items]
-        newItems[indexItem].qty++
-        setItems(newItems) 
-
-        // if (typeof onClose === 'function') {}
-        onClose();
-        
+        } else { 
+        const newItems = [...items];
+        newItems[indexItem] = {
+            ...newItems[indexItem],
+            qty: newItems[indexItem].qty+1
+        };
+        setItems(newItems)
         }
-        
+
+        startAnimation()
+        if (typeof onClose === 'function') {}
+        onClose();
+        setTimeout(() => {finishAnimation()}, 1000);
+
     }
     return (
             <div className='info' onClick={(ev) => ev.stopPropagation()}> 

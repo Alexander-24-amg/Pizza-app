@@ -1,5 +1,5 @@
 .AlertModal{
-    position:absolute;
+    position:fixed;
     left: 0;
     top:0;
     background-color: rgba(21, 21, 21, 0.603);
@@ -16,13 +16,19 @@
     position:absolute;
     left: 680px;
     top: 200px;
-    animation: ModalAnimation 400ms;
+    animation: ModalAnimation 400ms forwards;
 }
 
 .AlertModal_modal h4{
     position: relative;
     left:150px;
     top:70px;
+    font-size:20px;
+}
+.AlertModal_modal span{
+    position: relative;
+    left:150px;
+    top:80px;
     font-size:20px;
 }
 

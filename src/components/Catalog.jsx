@@ -23,7 +23,7 @@ export function Catalog({catalogitems,linkBasketCatalog,items}){
         <div className='Catalog'>
             <div className='Catalog_nav'>
                 <h1>Меню</h1>
-                <button onClick={linkBasketCatalog} data-path='Корзина'>Корзина <strong>{counter}</strong></button>
+                <button onClick={linkBasketCatalog} data-path='Корзина'>Корзина {counter>0? <strong>{counter}</strong> : false} </button>
             </div>
             <div className='Catalog_GridMenu'>
                     {catalogitems.map(({uid, title,price,price25,price35,pizza,pizzaBig,pizzaText,pizzaLittle}) =>{
