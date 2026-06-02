@@ -14,30 +14,31 @@
     padding-top:20px;
     background-color:#ffff;
     position: relative;
-    left:600px;
-    top: 160px;
+    margin: auto;
+    top: 12%;
     border-radius:30px;
 }
 
 .info_content__button{
     position:absolute;
-    top:-20px;
-    left:690px;
+    top: -4%;
+    left: 99%;
     border:none;
     background-color: rgba(255, 255, 255, 0.546);
     border-radius:50%;
     width:40px;
     height:40px;
-    font-size:20px;
+    font-size:clamp(16px, 2vw, 20px);
     color: rgb(0, 0, 0);
 }
 .info_content h3{
-    font-size: 25px;
+    font-size:clamp(20px,3vw,25px);
     padding-left:20px;
 }
 .info_content p{
     padding:10px 20px 0px 20px;
     color: rgb(101, 101, 101);
+    font-size: clamp(13px,3vw,16px);
 }
 
 .info_content_Fleximg{
@@ -46,8 +47,8 @@
 }
 
 .info_content_Fleximg img{
-    width:450px;
-    height:450px;
+    width:65%;
+    height:65%;
 }
 
 .info_buttons{
@@ -57,7 +58,7 @@
     background-color: rgb(255, 122, 28);
     /* background-color: rgb(237, 237, 237); */
     position:absolute;
-    top:595px;
+    top: 85%;
     width:100%;
     height:15%;
     border-bottom-left-radius:30px;
@@ -73,7 +74,7 @@
 .info_buttons__ul li button{
     width:60px;
     height:30px;
-    font-size:16px;
+    font-size:clamp(13px,3vw,16px);
     border-radius:30px;
     border: none;
     box-shadow: 5px 5px 5px rgba(74, 74, 74, 0.603);
@@ -88,14 +89,92 @@
     height:40px;
     border-radius:18px;
     border: none;
-    font-size:18px;
+    font-size:clamp(13px,3vw,18px);
     font-weight: 600;
     background-color:#fff;
     color: rgb(74, 74, 74);
     box-shadow: 5px 5px 5px rgba(74, 74, 74, 0.603);
     transition:0.5s;
 }
+
 .info_buttons__ButAdd:hover{
     background-color: rgb(255, 193, 148);
     cursor: pointer;
+}
+
+/* =======================================@MEDIA=================================================== */
+
+
+@media (max-width:900px){
+    .info_content{
+    width:75%;
+    height:clamp(550px,80vw,700px);
+}
+}
+
+@media (max-width:600px){
+    .info_content{
+    width:100%;
+    height:100%;
+    top:0%;
+    border-radius:0px;
+}
+
+.info_content__button{
+    top: 1%;
+    left:88%;
+    background-color: rgba(146, 146, 146, 0.546);
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    font-size:clamp(16px, 4vw, 20px);
+    font-weight: 500;
+    box-shadow: 3px 5px 10px rgba(0,0,0,0.5);
+}
+
+.info_buttons{
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    justify-content:space-between;
+    padding:7px 7px;
+}
+
+.info_content_Fleximg img{
+    width:85%;
+    height:85%;
+}
+.info_buttons__ButAdd{
+    width:30%;
+    height:35% ;
+}
+.info_buttons__ul{
+    gap:15%;
+}
+}
+
+@media (max-width:450px){
+.info_content__button{
+    left:85%;
+}
+.info_buttons{
+    flex-direction:column;
+    justify-content:space-around; 
+    top: 80%;
+    height:20%;
+}
+.info_buttons__ul{
+    justify-content:center;
+    gap:25%;
+}
+.info_buttons__ButAdd{
+    width:35%;
+    height:25%;
+    border-radius:10px;
+}
+}
+
+@media (max-width:380px){
+    .info_content__button{
+    left:82%;
+}
 }

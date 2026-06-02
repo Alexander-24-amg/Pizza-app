@@ -22,8 +22,10 @@ export function Catalog({catalogitems,linkBasketCatalog,items}){
     return(
         <div className='Catalog'>
             <div className='Catalog_nav'>
-                <h1>Меню</h1>
-                <button onClick={linkBasketCatalog} data-path='Корзина'>Корзина {counter>0? <strong>{counter}</strong> : false} </button>
+                <div className='Catalog_nav_dopContainer'>
+                    <h1>Меню</h1>
+                    <button onClick={linkBasketCatalog} data-path='Корзина'>Корзина {counter>0? <strong>{counter}</strong> : false} </button>
+                </div>
             </div>
             <div className='Catalog_GridMenu'>
                     {catalogitems.map(({uid, title,price,price25,price35,pizza,pizzaBig,pizzaText,pizzaLittle}) =>{

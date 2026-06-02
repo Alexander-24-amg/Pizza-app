@@ -1,10 +1,12 @@
 .Product_Cell{
-    width: 400px;
-    height: 450px;
+    /* width: 400px; */
+    width:100%;
+    height: 450px;  
     border:none;
     border-radius:25px;
     background: #ffddbb;
     padding:10px;
+    position: relative;
 }
 
 .Product_Cell:hover{
@@ -20,20 +22,28 @@
 }
 
 .Product_picture img{
-    width: 300px;
-    height:300px;
+    width:80%;
+    height:80%;
+}
+.Product_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:25%;
+    padding-left:5%;
 }
 
 .Product_text h3{
-    font-size:30px; 
+    font-size:clamp(17px, 3vw, 30px); 
     color: rgb(0, 0, 0);
-    padding-left:30px;
 }
 .Product_text p{
-    position: relative;
-    left:30px;
-    top:50px;
-    font-size:20px;
+    font-size:clamp(14px,2vw,20px);
+}
+.Product_text p span{
+    font-weight: 600;
+    font-size:clamp(17px,3vw,24px);
+    padding-left:3%;
 }
 
 @keyframes AddBaskedAnimation {
@@ -45,4 +55,28 @@
     transform: translate(150px, -150px); 
     opacity: 0; 
   }
+}
+
+/* =======================================@MEDIA=================================================== */
+@media(max-width:950px){
+    .Product_Cell{
+        height:100%;
+}
+}
+@media(max-width:730px){
+    .Product_Cell{
+        border-radius:20px;
+    }
+}
+
+@media(max-width:450px){
+    .Product_text h3{
+    font-size:clamp(12px, 3vw, 30px); 
+}
+}
+
+@media(max-width:320px){
+    .Product_text h3{
+    font-size:clamp(10px, 3vw, 30px); 
+}
 }

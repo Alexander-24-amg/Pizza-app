@@ -13,9 +13,8 @@
     height:200px;
     border-radius:30px;
     background-color: azure;
-    position:absolute;
-    left: 680px;
-    top: 200px;
+    margin: auto;
+    margin-top:10%;
     animation: ModalAnimation 400ms forwards;
 }
 
@@ -47,4 +46,25 @@
 @keyframes ModalAnimation {
     0%{transform: translateY(-400px);}
     100%{transform: translateY(0px);}
+}
+
+/* =======================================@MEDIA=================================================== */
+@media(max-width:600px){
+    .AlertModal_modal{
+    width:100%;
+    height:30%;
+    border-radius:0px;
+    margin-top:0%;
+}
+
+.AlertModal_modal h4{
+    position: relative;
+    left:30%;
+    font-size:clamp(16px,3vw,20px);
+}
+.AlertModal_modal span{
+    position: relative;
+    left:30%;
+    font-size:clamp(16px,3vw,20px);
+}
 }

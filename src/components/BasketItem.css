@@ -1,18 +1,19 @@
 .BasketItem{ 
     border-bottom: 1px solid rgb(133, 133, 133); 
-    width: 100%; 
-    padding-top:50px;
+    width:100%; 
+    padding-top:14%;
 }
 
 
 
 .BasketItem_text__title{
-    font-size:18px;
+    font-size:clamp(14px,2vw,20px);
     color: rgb(98, 98, 98);
 }
 
 .BasketItem_text__size{
     color: rgb(98, 98, 98);
+    font-size:clamp(12px,3vw,18px);
 }
 
 .BasketItem_product{
@@ -22,48 +23,63 @@
 }
 
 .BasketItem_foto{
-    width:200px;
+    width:60%;
 }
 
 .BasketItem_text{
-    width:200px;
+    width:47%;
 }
 
 .BasketItem_Flex{
     display: flex;
-    gap:70px;
+    gap:13%;
     justify-content: center;
     align-items: center;
-    padding-top:30px;
-    padding-bottom:10px;
+    padding-top:15%;
+    padding-bottom:2%;
+    width:100%;
 }
 
 .BasketItem_Qty button{
     border: none;
     border-radius:50%;
-    width:40px ;
-    height:40px ;
-    font-size:25px;
+    width:clamp(30px,8vw,40px);
+    height:clamp(30px,8vw,40px);
+    font-size:clamp(18px,3vw,25px);
     background-color: rgba(192, 192, 192, 0.619);
     cursor: pointer;
 }
 
 .BasketItem_Qty span{
-    font-size:30px;
+    font-size:clamp(20px,3vw,25px);
 }
 
 .BasketItem_Remove button{
     text-decoration: none;
-    font-size:16px;
+    font-size:clamp(14px,3vw,16px);
     color: black;
-    padding:10px 10px 10px 10px;
+    /* padding:55% 55% 55% 55%; */
     background-color: red;
-    border-radius:10px;
+    border-radius:50px;
     border: none;
+    width:clamp(25px,8vw,35px);
+    height:clamp(25px,8vw,35px);
 }
 
 .BasketItem_Price{
-    font-size: 18px;
+    font-size:clamp(14px,2vw,18px);
     font-weight: 600;
 }
 
+/* =======================================@MEDIA=================================================== */
+@media(max-width:800px){
+    .BasketItem_Flex{
+    gap:20%;
+    justify-content:space-between;
+    }
+    .BasketItem_Qty{
+        display: flex;
+        align-items: center;
+        gap:clamp(10px,2vw,15px);
+    }
+}

@@ -22,7 +22,7 @@ export function BasketSum({sum,items,openModal}){
             {/* {modal && <AlertModal closeModal={closeModal}/>} */}
             
             {items.length > 0 && <button className='BasketSum__openModal' onClick={openModal}>Оформить заказ</button>}
-
+            
             <h4>Итого: {sum}$</h4>
             
         </div>

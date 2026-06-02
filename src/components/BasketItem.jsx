@@ -32,7 +32,7 @@ export function BasketItem({uid,title,price,qty,items,setItems,size,pizzaLittle}
         <div className="BasketItem">
                 <div className='BasketItem_product'>
                     <div className='BasketItem_foto'>
-                        <img src={pizzaLittle} alt=""style={{width:'150px',height:'150px'}}/>
+                        <img src={pizzaLittle} alt=""style={{width:'75%',height:'75%'}}/>
                     </div>
 
                     <div className='BasketItem_text'>
@@ -52,7 +52,7 @@ export function BasketItem({uid,title,price,qty,items,setItems,size,pizzaLittle}
                     
                     {/* <div className="">{price*qty}</div> */}
                     <div className="BasketItem_Remove">
-                        <button onClick={(e)=>removePosition(e, {uid, size})}>Убрать</button>
+                        <button onClick={(e)=>removePosition(e, {uid, size})}>X</button>
                     </div>
                 </div>
         </div>

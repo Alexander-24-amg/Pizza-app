@@ -1,25 +1,60 @@
+
+
 .BasketSum{
-    width:450px;
-    height:200px;
+    width:30% ;
+    height:25% ;
     background-color:#ffddbb;
     /* background-color: rgb(236, 236, 236); */
     padding:20px;
     border-radius:10px;
-    margin-top:20px;
     position: fixed;
 }
 
 .BasketSum__openModal{
-    width:300px;
-    height:60px;
+    width: 70%;
+    height:40%;
     border-radius:15px;
     border: none;
-    font-size:20px;
+    font-size:clamp(15px,2vw,20px);
     font-weight: 700;
-    margin-left:53px;
+    margin-left:15%;
     background-color: rgb(62, 146, 62);
 }
 .BasketSum h4{
-    font-size:25px;
+    font-size:clamp(18px,3vw,25px);
     padding-top:77px;
+}
+
+/* =======================================@MEDIA=================================================== */
+
+@media(max-width:800px){
+    .BasketSum{
+    width:100%;
+    height:15%;
+    bottom: 0%;
+    border-radius:0px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .BasketSum__openModal{
+    width: 30%;
+    height:60%;
+    margin-left:0%;
+    }
+    .BasketSum h4{
+    padding-top:0px;
+    }
+}
+
+
+@media(max-width:500px){
+    .BasketSum__openModal{
+    width: 40%;
+    height:60%;
+    margin-left:0%;
+    padding:10px;
+    border-radius:10px;
+    }
 }

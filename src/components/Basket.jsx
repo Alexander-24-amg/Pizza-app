@@ -20,8 +20,10 @@ export function Basket({items,setItems,linkBasketCatalog}){
     return(
         <div className='Basket'>
             <div className='Basket_nav'>
-                <h1>Корзина</h1>
-                <button className='Basket_nav__button' onClick={linkBasketCatalog} data-path='Меню'>Меню</button>
+                <div className='Basket_nav_dopContainer'>
+                    <h1>Корзина</h1>
+                    <button className='Basket_nav__button' onClick={linkBasketCatalog} data-path='Меню'>Меню</button>
+                </div>
             </div>
             <hr />
             <div className='Basket_Flex'>
@@ -32,7 +34,7 @@ export function Basket({items,setItems,linkBasketCatalog}){
                         return <BasketItem title={title} price={price} qty={qty} uid={uid} key={uid} items={items} setItems={setItems} size={size} pizzaLittle={pizzaLittle} sum={sum}/>})
                 }
                 </div>
-                <div>
+                <div className='Basket_BasketSum'>
                     <BasketSum sum={sum} items={items} setItems={setItems} openModal={openModal}/>
                 </div>
             </div>

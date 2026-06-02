@@ -18,13 +18,13 @@ export function Product({price,price25,price35,title,uid,pizza,pizzaBig,pizzaTex
         <div className="Product_Cell"  onClick={openInfo}>
             
             <div className='Product_picture'>
-                <img src={pizza} alt="" />
-                {animation && <img style={{width:'300px',height:'300px',position: "absolute",zIndex:1000,animation:"AddBaskedAnimation 1s forwards"}}  src={pizza} alt="" />}
+                <img src={pizza} alt="Pizza" />
+                {animation && <img style={{width:'70%',height:'65%',borderRadius:'50%',position: "absolute",zIndex:1000,animation:"AddBaskedAnimation 1s forwards"}}  src={pizza} alt="" />}
             </div>
             
             <div className='Product_text'>
-            <h3>{title}</h3>
-            <p>Цена:{price}$</p>
+                <h3>{title}</h3>
+                <p>Цена:<span>{price}$</span></p>
             </div>
             {I   && <Info title={title} price={price} price25={price25} price35={price35} onClose={CloseInfo}  uid={uid} pizzaBig={pizzaBig} pizzaText={pizzaText} pizzaLittle={pizzaLittle} startAnimation={startAnimation} finishAnimation={finishAnimation}/>}
         </div>
